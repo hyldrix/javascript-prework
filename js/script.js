@@ -1,14 +1,10 @@
-
-
-var argButtonName, buttonScissors, buttonTest, buttonPaper;
-
 /**
  * Event listeners and function onClicked button
  */
 function buttonClicked(argButtonName) {
   clearMessages();
   console.log(argButtonName + ' został kliknięty');
-  var argComputerMove, argMoveId, argPlayerMove, computerMove, playerInput, playerMove, randomNumber;
+  let computerMove, playerInput, playerMove, randomNumber; // Declared with let because these are changing all the time 
 
 /**
  * Function converting id to move
@@ -56,10 +52,11 @@ console.log('ruch komputera to: ' + computerMove);
 displayResult(playerMove, computerMove);
 }
 
-buttonRock = document.getElementById('button-rock');
+//declared with const, because these references are not changing
+const buttonRock = document.getElementById('button-rock');
 buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
-buttonPaper = document.getElementById('button-paper');
+const buttonPaper = document.getElementById('button-paper');
 buttonPaper.addEventListener('click', function(){ buttonClicked('papier'); });
-buttonScissors = document.getElementById('button-scissors');
+const buttonScissors = document.getElementById('button-scissors');
 buttonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); });
 
